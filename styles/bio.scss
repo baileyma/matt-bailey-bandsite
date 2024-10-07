@@ -11,6 +11,9 @@
 
   &__title {
     align-self: center;
+    @mixin mobile__header {
+      @content;
+    }
   }
 
   &__nav-bar {

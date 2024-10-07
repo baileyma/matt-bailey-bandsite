@@ -3,13 +3,13 @@
 @mixin mobile__header {
   font-size: 2.4rem;
   height: 3.2rem;
-  font-family: 'NunitoSansBold';
+  font-family: NunitoSansBold;
 }
 
 @mixin mobile__sub-header {
   font-size: 1.4rem;
   height: 2.2rem;
-  font-family: 'NunitoSansBold';
+  font-family: NunitoSansBold;
   font-weight: 600;
 }
 
