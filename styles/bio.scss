@@ -22,5 +22,69 @@
   }
 
   &__nav-item {
+    @mixin mobile__sub-header {
+      @content;
+    }
+  }
+}
+
+.hero-page {
+  &__title {
+    @mixin mobile__header {
+      @content;
+    }
+  }
+}
+
+.about-section {
+  &__title {
+    @mixin mobile__header {
+      @content;
+    }
+  }
+
+  &__text {
+    @mixin mobile__copy {
+      @content;
+    }
+  }
+
+  &__subheading {
+    @mixin mobile__sub-header {
+      @content;
+    }
+  }
+}
+
+.photo-gallery {
+  &__title {
+    @mixin mobile__header {
+      @content;
+    }
+
+    &__image-container {
+    }
+    &__image-item {
+    }
+  }
+}
+
+.footer {
+  &__title {
+    @mixin mobile__header {
+      @content;
+    }
+  }
+
+  &__sub-title {
+    @mixin mobile__sub-header {
+      @content;
+    }
+  }
+
+  &__text {
+    @mixin mobile__copy {
+      @content;
+    }
   }
 }
