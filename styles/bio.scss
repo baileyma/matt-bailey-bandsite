@@ -1,0 +1,23 @@
+@use './partials/variables.scss' as *;
+@use './partials/fonts.scss' as *;
+@use './partials/mixins.scss' as *;
+@use './partials/resets.scss' as *;
+
+.header {
+  background-color: $primary-color-black;
+  color: $primary-color-white;
+  display: flex;
+  flex-direction: column;
+
+  &__title {
+    align-self: center;
+  }
+
+  &__nav-bar {
+    display: flex;
+    justify-content: space-evenly;
+  }
+
+  &__nav-item {
+  }
+}
