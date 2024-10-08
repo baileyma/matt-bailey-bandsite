@@ -1,7 +1,10 @@
 @use './partials/variables.scss' as *;
 @use './partials/fonts.scss' as *;
-@use './partials/mixins.scss' as *;
 @use './partials/resets.scss' as *;
+
+// The hero page background height/width needs looking at
+// Hero page title's font characteristics don't respond to my css
+// Make line heights consistent
 
 .header {
   background-color: $primary-color-black;
@@ -11,9 +14,9 @@
 
   &__title {
     align-self: center;
-    @mixin mobile__header {
-      @content;
-    }
+    font-size: 2.4rem;
+    height: 3.2rem;
+    font-family: NunitoSansBold;
   }
 
   &__nav-bar {
@@ -21,70 +24,103 @@
     justify-content: space-evenly;
   }
 
+  &__nav-item--biography {
+    border-bottom: 0.5rem solid $primary-color-white;
+  }
+
   &__nav-item {
-    @mixin mobile__sub-header {
-      @content;
-    }
+    font-size: 1.4rem;
+    height: 2.2rem;
+    font-family: NunitoSansBold;
+    font-weight: 600;
   }
 }
 
 .hero-page {
+  background-image: url('../assets/images/hero-bio.jpg');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-color: #323232;
+  opacity: 50%;
+  height: 28rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
   &__title {
-    @mixin mobile__header {
-      @content;
-    }
+    font-size: 2.4rem;
+    height: 3.2rem;
+    font-family: NunitoSansBold;
+    color: $primary-color-white;
+    padding: 0 1.6rem;
   }
 }
 
 .about-section {
   &__title {
-    @mixin mobile__header {
-      @content;
-    }
+    font-size: 2.4rem;
+    height: 3.2rem;
+    font-family: NunitoSansBold;
+    padding: 2.4rem 1.6rem 1.6rem 1.6rem;
+  }
+
+  &__image {
+    width: 100%;
   }
 
   &__text {
-    @mixin mobile__copy {
-      @content;
-    }
+    font-size: 1.3rem;
+    line-height: 2.8rem;
+    font-family: 'NunitoSansRegular';
   }
 
   &__subheading {
-    @mixin mobile__sub-header {
-      @content;
-    }
+    font-size: 1.4rem;
+    height: 2.2rem;
+    font-family: NunitoSansBold;
+    font-weight: 600;
   }
 }
 
 .photo-gallery {
   &__title {
-    @mixin mobile__header {
-      @content;
-    }
+    font-size: 2.4rem;
+    height: 3.2rem;
+    font-family: NunitoSansBold;
 
     &__image-container {
+      display: flex;
+      flex-direction: column;
+      flex-wrap: nowrap;
     }
+
     &__image-item {
+      width: 100vh;
     }
   }
 }
 
 .footer {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+
   &__title {
-    @mixin mobile__header {
-      @content;
-    }
+    font-size: 2.4rem;
+    height: 3.2rem;
+    font-family: NunitoSansBold;
   }
 
   &__sub-title {
-    @mixin mobile__sub-header {
-      @content;
-    }
+    font-size: 1.4rem;
+    height: 2.2rem;
+    font-family: NunitoSansBold;
+    font-weight: 600;
   }
 
   &__text {
-    @mixin mobile__copy {
-      @content;
-    }
+    font-size: 1.3rem;
+    height: 1.8rem;
+    font-family: 'NunitoSansRegular';
   }
 }
