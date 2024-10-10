@@ -76,6 +76,9 @@
   background-image: url('../assets/images/hero-bio.jpg');
   background-repeat: no-repeat;
   background-size: cover;
+  background-color: rgba($color: $primary-color-black, $alpha: 0.5);
+  background-blend-mode: overlay;
+
   height: 80vh;
   opacity: 50%;
 
@@ -131,10 +134,16 @@
       padding-left: 4.8rem;
     }
   }
+  &__text-wrapper {
+    @include tablet-and-desktop {
+      width: 70%;
+    }
+  }
 
   &__image {
-    width: 85%;
+    width: 100%;
     @include tablet-and-desktop {
+      width: 58%;
       padding-left: 9.6rem;
     }
   }
@@ -146,7 +155,7 @@
 
     @include tablet-and-desktop {
       padding-left: 9.6rem;
-      width: 40%;
+      width: 32%;
       display: inline-block;
       font-size: 1.4rem;
     }
@@ -161,7 +170,7 @@
       @include tablet-and-desktop {
         padding-left: 9.6rem;
         font-size: 1.4rem;
-        padding-top: 6rem;
+        padding-top: 9rem;
       }
     }
   }
@@ -211,6 +220,7 @@
       flex-direction: row;
       flex-wrap: wrap;
       justify-content: space-between;
+      width: 80%;
     }
   }
 
@@ -236,12 +246,15 @@
     position: relative;
   }
 
+  &__wrapper {
+    max-width: 1280px;
+  }
+
   &__intro {
     @include tablet-and-desktop {
       display: flex;
       justify-content: flex-start;
-
-      width: 60%;
+      width: 48%;
     }
   }
 
@@ -259,7 +272,7 @@
   }
 
   &__icons {
-    width: 35%;
+    width: 25%;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -308,10 +321,11 @@
 
     @include tablet-and-desktop {
       position: absolute;
-      right: 3rem;
+      right: 16rem;
       top: 2.2rem;
       padding: 3rem;
       height: 3rem;
+      width: 15%;
     }
   }
 
@@ -319,7 +333,7 @@
     @include tablet-and-desktop {
       display: flex;
       justify-content: flex-start;
-      column-gap: 5rem;
+      column-gap: 3rem;
     }
   }
 }
