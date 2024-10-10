@@ -20,10 +20,11 @@
 
     @include tablet-and-desktop {
       flex-direction: row;
-      justify-content: space-evenly;
+      justify-content: flex-start;
       align-items: center;
-      width: 55%;
+
       padding-left: 4.8rem;
+      margin: 0;
     }
   }
 
@@ -32,11 +33,20 @@
     font-size: 2.4rem;
     height: 2.2rem;
     font-family: NunitoSansBold;
+    padding: 2rem 0;
   }
 
   &__nav-bar {
-    // need a link and a tags
-    // have a min height of x vh...then add the bottom border
+    display: flex;
+    justify-content: space-around;
+
+    @include tablet-and-desktop {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-around;
+      width: 40%;
+      height: 100%;
+    }
   }
 
   &__nav-item--biography {
@@ -48,6 +58,16 @@
     height: 2.2rem;
     font-family: NunitoSansBold;
     font-weight: 600;
+    height: 100%;
+    min-height: 5vh;
+    text-align: center;
+    width: 100%;
+    margin: 0;
+
+    @include tablet-and-desktop {
+      width: 30%;
+      height: 100%;
+    }
   }
 }
 
@@ -64,10 +84,9 @@
   justify-content: center;
   align-items: flex-start;
 
-  // @include tablet-and-desktop {
-  //   background-size: 100%;
-  //   height: 80vh;
-  // }
+  @include tablet-and-desktop {
+    width: 100%;
+  }
 
   @include tablet-and-desktop {
     &__wrapper {
@@ -217,6 +236,15 @@
     position: relative;
   }
 
+  &__intro {
+    @include tablet-and-desktop {
+      display: flex;
+      justify-content: flex-start;
+
+      width: 60%;
+    }
+  }
+
   &__title {
     font-size: 2.4rem;
     line-height: 3.2rem;
@@ -226,6 +254,7 @@
       font-size: 3.6rem;
       font-weight: 700;
       line-height: 4.4rem;
+      width: 63%;
     }
   }
 
@@ -236,7 +265,7 @@
     justify-content: space-between;
 
     @include tablet-and-desktop {
-      width: 40%;
+      width: 37%;
       align-items: center;
     }
   }
@@ -290,16 +319,7 @@
     @include tablet-and-desktop {
       display: flex;
       justify-content: flex-start;
-      column-gap: 20rem;
-    }
-  }
-
-  &__intro {
-    @include tablet-and-desktop {
-      display: flex;
-      justify-content: flex-start;
       column-gap: 5rem;
-      width: 50%;
     }
   }
 }
