@@ -69,12 +69,20 @@
     text-align: center;
     width: 100%;
     margin: 0;
-    padding: 2rem 0 0rem 0;
+    padding: 2rem 0 1rem 0;
 
     @include tablet-and-desktop {
       width: 30%;
       height: 100%;
+      padding-bottom: 1.5rem;
     }
+  }
+
+  &__nav-link {
+    text-decoration: none;
+    color: $primary-color-white;
+    display: flex;
+    justify-content: center;
   }
 }
 
@@ -86,20 +94,21 @@
   background-color: rgba($color: $primary-color-black, $alpha: 0.5);
   background-blend-mode: overlay;
 
-  min-height: 80vh;
+  height: 80vh;
 
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
 
-  @include tablet-and-desktop {
-    &__wrapper {
+  &__wrapper {
+    @include tablet-and-desktop {
       max-width: 1280px;
       margin: auto;
       width: 100%;
     }
   }
+
   &__title {
     font-size: 2.4rem;
     height: 3.2rem;
@@ -157,7 +166,7 @@
     font-family: 'NunitoSansRegular';
 
     @include tablet-and-desktop {
-      width: 48%;
+      width: 45%;
       display: inline-block;
       font-size: 1.4rem;
       padding-right: 1rem;
@@ -265,7 +274,8 @@
     @include tablet-and-desktop {
       display: flex;
       justify-content: flex-start;
-      width: 48%;
+      width: 55%;
+      column-gap: 0.5rem;
     }
   }
 
@@ -290,7 +300,7 @@
 
     @include tablet-and-desktop {
       width: 37%;
-      align-items: center;
+      padding-top: 3rem;
     }
   }
 
