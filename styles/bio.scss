@@ -17,14 +17,14 @@
     flex-direction: column;
     max-width: 1280px;
     margin: auto;
+    padding-top: 1rem;
 
     @include tablet-and-desktop {
       flex-direction: row;
       justify-content: flex-start;
       align-items: center;
 
-      padding-left: 4.8rem;
-      margin: 0;
+      padding: 1rem 3.6rem 0 3.6rem;
     }
   }
 
@@ -33,7 +33,13 @@
     font-size: 2.4rem;
     height: 2.2rem;
     font-family: NunitoSansBold;
-    padding: 2rem 0;
+    max-width: 12rem;
+    max-height: 2rem;
+
+    @include tablet-and-desktop {
+      // This is a bit of a hack...can I do better?
+      border-bottom: 0.5rem solid $primary-color-black;
+    }
   }
 
   &__nav-bar {
@@ -63,6 +69,7 @@
     text-align: center;
     width: 100%;
     margin: 0;
+    padding: 2rem 0 0rem 0;
 
     @include tablet-and-desktop {
       width: 30%;
@@ -79,17 +86,12 @@
   background-color: rgba($color: $primary-color-black, $alpha: 0.5);
   background-blend-mode: overlay;
 
-  height: 80vh;
-  opacity: 50%;
+  min-height: 80vh;
 
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
-
-  @include tablet-and-desktop {
-    width: 100%;
-  }
 
   @include tablet-and-desktop {
     &__wrapper {
@@ -137,13 +139,14 @@
   &__text-wrapper {
     @include tablet-and-desktop {
       width: 70%;
+      padding-left: 9.6rem;
     }
   }
 
   &__image {
     width: 100%;
     @include tablet-and-desktop {
-      width: 58%;
+      width: 75%;
       padding-left: 9.6rem;
     }
   }
@@ -154,10 +157,11 @@
     font-family: 'NunitoSansRegular';
 
     @include tablet-and-desktop {
-      padding-left: 9.6rem;
-      width: 32%;
+      width: 48%;
       display: inline-block;
       font-size: 1.4rem;
+      padding-right: 1rem;
+      line-height: 2.2rem;
     }
 
     &--emphasis {
@@ -168,21 +172,18 @@
       padding-top: 1rem;
 
       @include tablet-and-desktop {
-        padding-left: 9.6rem;
         font-size: 1.4rem;
-        padding-top: 9rem;
       }
     }
   }
 
   &__subheading {
     font-size: 1.4rem;
-    height: 2.2rem;
+    line-height: 2.2rem;
     font-family: 'NunitoSansBold';
     font-weight: 600;
 
     @include tablet-and-desktop {
-      padding-left: 9.6rem;
       font-size: 2.4rem;
       line-height: 3.2rem;
       font-weight: 500;
@@ -192,11 +193,16 @@
 
 .photo-gallery {
   background-color: $secondary-color-alabaster;
+  padding: 0 1.6rem;
+
+  @include tablet-and-desktop {
+    padding: 0rem 3.6rem;
+  }
 
   &__wrapper {
     max-width: 1280px;
     margin: auto;
-    padding: 0 1.6rem;
+
     display: flex;
     flex-direction: column;
   }
@@ -220,7 +226,7 @@
       flex-direction: row;
       flex-wrap: wrap;
       justify-content: space-between;
-      width: 80%;
+      width: 100%;
     }
   }
 
@@ -242,12 +248,17 @@
   padding: 0 1.6rem;
 
   @include tablet-and-desktop {
-    padding: 3rem;
-    position: relative;
+    padding: 0rem 3.6rem;
   }
 
   &__wrapper {
-    max-width: 1280px;
+    @include tablet-and-desktop {
+      position: relative;
+      width: 100%;
+      padding: 0 2rem;
+      max-width: 1280px;
+      margin: auto;
+    }
   }
 
   &__intro {
@@ -321,7 +332,7 @@
 
     @include tablet-and-desktop {
       position: absolute;
-      right: 16rem;
+      right: 0rem;
       top: 2.2rem;
       padding: 3rem;
       height: 3rem;
@@ -333,7 +344,13 @@
     @include tablet-and-desktop {
       display: flex;
       justify-content: flex-start;
-      column-gap: 3rem;
+      column-gap: 9%;
+    }
+  }
+
+  &__text-block {
+    @include tablet-and-desktop {
+      width: 30%;
     }
   }
 }
