@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Bandsite | Homepage</title>
     <link rel="stylesheet" href="./styles/bio.css" />
+    <script src="./scripts/index-page.js" defer></script>
   </head>
   <body>
     <header class="header">
@@ -16,7 +17,7 @@
             alt="bandsite logo"
         /></a>
         <ul class="header__nav-bar">
-          <li class="header__nav-item header__nav-item--biography">
+          <li class="header__nav-item header__nav-item--active">
             <a class="header__nav-link" href="#">Biography</a>
           </li>
           <li class="header__nav-item">
@@ -127,6 +128,16 @@
             />
           </div>
         </div>
+      </section>
+      <section class="comments">
+        <h1 class="comments__title">Join the Conversation</h1>
+        <form action="">
+          <label for="name">Name</label>
+          <input type="text" /><br />
+          <label for="comment">Comment</label>
+          <input type="text" />
+        </form>
+        <div class="comments__list"></div>
       </section>
       <footer class="footer">
         <div class="footer__wrapper">

@@ -254,30 +254,6 @@
   }
 }
 
-.comments {
-  color: blue;
-
-  &__title {
-    font-size: 6rem;
-  }
-
-  &__list {
-    font-size: 2rem;
-    display: flex;
-    flex-direction: column;
-  }
-  &__name {
-    font-size: 3rem;
-  }
-  &__date {
-    font-weight: bold;
-  }
-  &__text {
-    text-decoration: underline;
-    border-bottom: 1rem solid black;
-  }
-}
-
 .footer {
   display: flex;
   flex-direction: column;
