@@ -1,0 +1,121 @@
+@use './variables.scss' as *;
+@use './fonts.scss' as *;
+@use './resets.scss' as *;
+@use './mixins.scss' as *;
+
+.footer {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  color: $primary-color-white;
+  background-color: $primary-color-black;
+  padding: 0 1.6rem;
+
+  @include tablet-and-desktop {
+    padding: 0rem 3.6rem;
+  }
+
+  &__wrapper {
+    @include tablet-and-desktop {
+      position: relative;
+      width: 100%;
+      padding: 0 2rem;
+      max-width: 1280px;
+      margin: auto;
+    }
+  }
+
+  &__intro {
+    @include tablet-and-desktop {
+      display: flex;
+      justify-content: flex-start;
+      width: 55%;
+      column-gap: 0.5rem;
+    }
+  }
+
+  &__title {
+    font-size: 2.4rem;
+    line-height: 3.2rem;
+    font-family: NunitoSansBold;
+
+    @include tablet-and-desktop {
+      font-size: 3.6rem;
+      font-weight: 700;
+      line-height: 4.4rem;
+      width: 63%;
+    }
+  }
+
+  &__icons {
+    width: 25%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+    @include tablet-and-desktop {
+      width: 37%;
+      padding-top: 3rem;
+    }
+  }
+
+  &__icons-item {
+    @include tablet-and-desktop {
+      height: 40%;
+    }
+  }
+
+  &__sub-title {
+    font-size: 1.4rem;
+    line-height: 2.2rem;
+    font-family: NunitoSansBold;
+    font-weight: 600;
+
+    @include tablet-and-desktop {
+      font-size: 1.4rem;
+      line-height: 2rem;
+      font-weight: 700;
+    }
+  }
+
+  &__text {
+    font-size: 1.3rem;
+    line-height: 1.8rem;
+    font-family: 'NunitoSansRegular';
+
+    @include tablet-and-desktop {
+      font-size: 1.4rem;
+      line-height: 2rem;
+      font-weight: 400;
+    }
+  }
+
+  &__logo {
+    width: 25%;
+    padding-top: 5rem;
+    padding-bottom: 1rem;
+
+    @include tablet-and-desktop {
+      position: absolute;
+      right: 0rem;
+      top: 0rem;
+      padding: 3rem;
+      height: 3rem;
+      width: 15%;
+    }
+  }
+
+  &__text-blocks {
+    @include tablet-and-desktop {
+      display: flex;
+      justify-content: flex-start;
+      column-gap: 9%;
+    }
+  }
+
+  &__text-block {
+    @include tablet-and-desktop {
+      width: 30%;
+    }
+  }
+}

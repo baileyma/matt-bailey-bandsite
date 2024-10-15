@@ -27,22 +27,27 @@ const commentsList = [
   },
 ];
 
-let commentsSectionEl = document.querySelector('.comments__list');
+let commentsSectionElA = document.querySelector('.comments__all-text');
+let commentsSectionElB = document.querySelector('.comments__title-and-date');
 
-for (let i = 0; i < commentsList.length; i++) {
-  let commentNameEl = document.createElement('p');
-  let commentDateEl = document.createElement('p');
-  let commentTextEl = document.createElement('p');
+function displayComment() {
+  for (let i = 0; i < commentsList.length; i++) {
+    let commentNameEl = document.createElement('p');
+    let commentDateEl = document.createElement('p');
+    let commentTextEl = document.createElement('p');
 
-  commentNameEl.innerHTML = commentsList[i].name;
-  commentDateEl.innerHTML = commentsList[i].Date;
-  commentTextEl.innerHTML = commentsList[i].Comment;
+    commentNameEl.innerHTML = commentsList[i].name;
+    commentDateEl.innerHTML = commentsList[i].Date;
+    commentTextEl.innerHTML = commentsList[i].Comment;
 
-  commentNameEl.classList.add('comments__name');
-  commentDateEl.classList.add('comments__date');
-  commentTextEl.classList.add('comments__text');
+    commentNameEl.classList.add('comments__name');
+    commentDateEl.classList.add('comments__date');
+    commentTextEl.classList.add('comments__text');
 
-  commentsSectionEl.appendChild(commentNameEl);
-  commentsSectionEl.appendChild(commentDateEl);
-  commentsSectionEl.appendChild(commentTextEl);
+    commentsSectionElA.appendChild(commentNameEl);
+    commentsSectionElA.appendChild(commentDateEl);
+    commentsSectionElB.appendChild(commentTextEl);
+  }
 }
+
+displayComment();

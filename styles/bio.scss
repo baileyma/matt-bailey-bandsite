@@ -257,6 +257,15 @@
 .comments {
   color: blue;
 
+  &__all-text {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__title-and-date {
+    display: flex;
+  }
+
   &__title {
     font-size: 6rem;
   }
