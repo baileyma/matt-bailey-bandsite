@@ -132,36 +132,52 @@
       </section>
       <section class="comments">
         <h1 class="comments__title">Join the Conversation</h1>
-        <form class="comments__form">
-          <div class="comments__form-left">Picture</div>
-          <div class="comments__form-right">
-            <div class="comments__form-item">
-              <label for="name" class="comments__form-label">NAME</label>
-              <input
-                type="text"
-                id="name"
-                class="comments__form-input"
-                placeholder="Enter your name"
-              />
-            </div>
-            <div class="comments__form-item">
-              <label for="comment" class="comments__form-label">COMMENT</label>
-              <textarea
-                type="text"
-                id="comment"
-                class="comments__form-input"
-                placeholder="Add a new comment"
-              ></textarea>
-            </div>
-
-            <button id="submit" type="submit" class="comments__form-button">
-              COMMENT
-            </button>
+        <div class="comments__container">
+          <div class="comments__form-left">
+            <img
+              src="./assets/images/Mohan-muruge.jpg"
+              alt="Headshot of Mohan Muruge"
+              class="comments__image"
+            />
           </div>
-        </form>
-        <div class="comments__all-text">
-          <div class="comments__title-and-date"></div>
+          <div class="comments__form-right">
+            <form class="comments__form">
+              <div class="comments__form-item">
+                <label for="name" class="comments__form-label">NAME</label>
+                <input
+                  type="text"
+                  id="name"
+                  class="comments__form-input"
+                  placeholder="Enter your name"
+                />
+              </div>
+              <div class="comments__form-item">
+                <label for="comment" class="comments__form-label"
+                  >COMMENT</label
+                >
+                <textarea
+                  type="text"
+                  id="comment"
+                  class="comments__form-input"
+                  placeholder="Add a new comment"
+                ></textarea>
+              </div>
+
+              <button id="submit" type="submit" class="comments__form-button">
+                COMMENT
+              </button>
+            </form>
+          </div>
         </div>
+      </section>
+      <section class="comment-list">
+        <!-- <div class="comment-list__container">
+          <div class="comment-list__left"></div>
+          <div class="comment-list__right">
+            <div class="comment-list__title-and-date"></div>
+            <div class="comment-list__textProvided"></div>
+          </div>
+        </div> -->
       </section>
       <footer class="footer">
         <div class="footer__wrapper">

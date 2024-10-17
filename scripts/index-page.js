@@ -27,7 +27,7 @@ const commentsList = [
   },
 ];
 
-let commentsSectionEl = document.querySelector('.comments__title-and-date');
+let commentList = document.querySelector('.comment-list');
 
 // Make the comments form div a variable
 
@@ -37,9 +37,38 @@ let commentsSectionEl = document.querySelector('.comments__title-and-date');
 // This puts commentsList into p tags within div
 // creates p element, gives innerhtml from commentsList, adds class, then appends to div
 function displayComment() {
-  commentsSectionEl.innerHTML = '';
-
   for (let i = 0; i < commentsList.length; i++) {
+    // Setup container and append to the section
+    let commentListContainer = document.createElement('div');
+
+    commentList.appendChild(commentListContainer);
+
+    // Setup left and right parts, add the img to left part, then append them to the container
+    let commentListLeft = document.createElement('div');
+    let commentListRight = document.createElement('div');
+
+    commentListLeft.innerHTML =
+      '<img src="./assets/images/Mohan-muruge.jpg" alt="Headshot of Mohan Muruge" class="comments__image"/>';
+
+    commentListContainer.appendChild(commentListLeft);
+    commentListContainer.appendChild(commentListRight);
+
+    // Setup title&date and text and append them to the right part
+
+    let commentListTitleDate = document.createElement('div');
+    let commentListTextProvided = document.createElement('div');
+
+    commentListRight.appendChild(commentListTitleDate);
+    commentListRight.appendChild(commentListTextProvided);
+
+    // Add class names for all five div elements
+
+    commentListContainer.classList.add('comment-list__container');
+    commentListLeft.classList.add('comment-list__left');
+    commentListRight.classList.add('comment-list__right');
+    commentListTitleDate.classList.add('comment-list__title-and-date');
+    commentListTextProvided.classList.add('comment-list__textProvided');
+
     let commentNameEl = document.createElement('p');
     let commentDateEl = document.createElement('p');
     let commentTextEl = document.createElement('p');
@@ -48,18 +77,21 @@ function displayComment() {
     commentDateEl.innerHTML = commentsList[i].date;
     commentTextEl.innerHTML = commentsList[i].comment;
 
-    commentNameEl.classList.add('comments__name');
-    commentDateEl.classList.add('comments__date');
-    commentTextEl.classList.add('comments__text');
+    commentNameEl.classList.add('comment-list__name');
+    commentDateEl.classList.add('comment-list__date');
+    commentTextEl.classList.add('comment-list__text');
 
-    commentsSectionEl.appendChild(commentNameEl);
-    commentsSectionEl.appendChild(commentDateEl);
-    commentsSectionEl.appendChild(commentTextEl);
+    commentListTitleDate.appendChild(commentNameEl);
+    commentListTitleDate.appendChild(commentDateEl);
+    commentListTextProvided.appendChild(commentTextEl);
   }
 }
 
 const submitHandler = (event) => {
   event.preventDefault();
+
+  commentList.innerHTML = '';
+
   let newComment = {
     name: event.target.name.value,
     date: event.timeStamp,

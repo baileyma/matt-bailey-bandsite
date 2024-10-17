@@ -175,62 +175,53 @@
 }
 
 .comments {
-  color: blue;
-
-  &__all-text {
-    display: flex;
-    flex-direction: column;
-  }
-
-  &__title-and-date {
-    display: flex;
-  }
+  color: $primary-color-silver;
 
   &__title {
     font-size: 6rem;
+    color: $primary-color-black;
   }
 
-  &__list {
-    font-size: 2rem;
+  &__container {
+    display: flex;
+  }
+
+  // Form left and its children
+  &__form-left {
+    width: 15vw;
     display: flex;
     flex-direction: column;
+    align-items: center;
   }
-  &__name {
-    font-size: 3rem;
+
+  &__image {
+    width: 7vw;
+    border-radius: 50%;
   }
-  &__date {
-    font-weight: bold;
-  }
-  &__text {
-    text-decoration: underline;
-    border-bottom: 1rem solid black;
+
+  // Form right and its children
+  &__form-right {
+    width: 85vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
 
   &__form {
-    display: flex;
-    flex-direction: row;
+    width: 100%;
   }
 
   &__form-label {
     padding-top: 0.5rem;
     padding-bottom: 0.5rem;
-  }
-
-  &__form-left {
-    width: 20vw;
-  }
-
-  &__form-right {
-    width: 80vw;
+    color: $primary-color-silver;
+    width: 90%;
   }
 
   &__form-item {
     display: flex;
     flex-direction: column;
-  }
-
-  &__form-label {
-    color: $primary-color-silver;
+    width: 90%;
   }
 
   &__form-input {
@@ -239,17 +230,63 @@
     padding: 0.5rem;
     color: $primary-color-black;
     background-color: $secondary-color-alabaster;
-
-    ::placeholder {
-      color: $primary-color-black;
-    }
+    font-family: NunitoSansBold;
+    border: 0.1rem solid $primary-color-silver;
   }
 
   &__form-button {
     background-color: $primary-color-black;
     color: $primary-color-white;
     width: 60vw;
-    height: 15vh;
+    height: 5vh;
     border-radius: 0.4rem;
+    width: 90%;
+  }
+}
+
+.comment-list {
+  &__container {
+    display: flex;
+    flex-direction: row;
+    border-bottom: 0.1rem solid $primary-color-silver;
+    width: 90%;
+    margin: auto;
+  }
+
+  &__left {
+    display: flex;
+    flex-direction: column;
+    width: 20vw;
+    padding-top: 2rem;
+  }
+
+  &__right {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__title-and-date {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__textProvided {
+    color: $primary-color-black;
+  }
+
+  // Created in JS
+
+  // Appended to __title-and-date
+  &__name {
+    font-size: 2rem;
+  }
+  &__date {
+    font-weight: bold;
+  }
+
+  // Appended to __textProvided
+  &__text {
   }
 }
