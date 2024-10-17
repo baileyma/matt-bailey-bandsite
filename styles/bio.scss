@@ -205,4 +205,51 @@
     text-decoration: underline;
     border-bottom: 1rem solid black;
   }
+
+  &__form {
+    display: flex;
+    flex-direction: row;
+  }
+
+  &__form-label {
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+  }
+
+  &__form-left {
+    width: 20vw;
+  }
+
+  &__form-right {
+    width: 80vw;
+  }
+
+  &__form-item {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__form-label {
+    color: $primary-color-silver;
+  }
+
+  &__form-input {
+    border-radius: 0.4rem;
+    margin-bottom: 1rem;
+    padding: 0.5rem;
+    color: $primary-color-black;
+    background-color: $secondary-color-alabaster;
+
+    ::placeholder {
+      color: $primary-color-black;
+    }
+  }
+
+  &__form-button {
+    background-color: $primary-color-black;
+    color: $primary-color-white;
+    width: 60vw;
+    height: 15vh;
+    border-radius: 0.4rem;
+  }
 }
