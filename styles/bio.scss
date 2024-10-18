@@ -184,6 +184,7 @@
 
   &__container {
     display: flex;
+    padding-bottom: 3rem;
   }
 
   // Form left and its children
@@ -249,6 +250,7 @@
     display: flex;
     flex-direction: row;
     border-bottom: 0.1rem solid $primary-color-silver;
+    border-top: 0.1rem solid $primary-color-silver;
     width: 90%;
     margin: auto;
   }
@@ -260,9 +262,18 @@
     padding-top: 2rem;
   }
 
+  &__image {
+    width: 10vw;
+    height: 10vh;
+    border-radius: 50%;
+    background-color: $secondary-color-mercury;
+    margin-right: 1.5rem;
+  }
+
   &__right {
     display: flex;
     flex-direction: column;
+    width: 100%;
   }
 
   &__title-and-date {
@@ -281,9 +292,11 @@
   // Appended to __title-and-date
   &__name {
     font-size: 2rem;
+    margin-bottom: 0rem;
   }
   &__date {
     font-weight: bold;
+    margin-bottom: 0rem;
   }
 
   // Appended to __textProvided

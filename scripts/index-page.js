@@ -27,7 +27,9 @@ const commentsList = [
   },
 ];
 
-let commentList = document.querySelector('.comment-list');
+// Create a variable for the comment-list div
+
+let commentListEl = document.querySelector('.comment-list');
 
 // Make the comments form div a variable
 
@@ -36,38 +38,41 @@ let commentList = document.querySelector('.comment-list');
 
 // This puts commentsList into p tags within div
 // creates p element, gives innerhtml from commentsList, adds class, then appends to div
+
 function displayComment() {
   for (let i = 0; i < commentsList.length; i++) {
     // Setup container and append to the section
-    let commentListContainer = document.createElement('div');
+    let commentListElContainer = document.createElement('div');
 
-    commentList.appendChild(commentListContainer);
+    commentListEl.appendChild(commentListElContainer);
 
     // Setup left and right parts, add the img to left part, then append them to the container
-    let commentListLeft = document.createElement('div');
-    let commentListRight = document.createElement('div');
+    let commentListElLeft = document.createElement('div');
+    let commentListElRight = document.createElement('div');
 
-    commentListLeft.innerHTML =
-      '<img src="./assets/images/Mohan-muruge.jpg" alt="Headshot of Mohan Muruge" class="comments__image"/>';
+    let commentListElLeftDiv = document.createElement('div');
+    commentListElLeftDiv.classList.add('comment-list__image');
 
-    commentListContainer.appendChild(commentListLeft);
-    commentListContainer.appendChild(commentListRight);
+    commentListElLeft.appendChild(commentListElLeftDiv);
+
+    commentListElContainer.appendChild(commentListElLeft);
+    commentListElContainer.appendChild(commentListElRight);
 
     // Setup title&date and text and append them to the right part
 
-    let commentListTitleDate = document.createElement('div');
-    let commentListTextProvided = document.createElement('div');
+    let commentListElTitleDate = document.createElement('div');
+    let commentListElTextProvided = document.createElement('div');
 
-    commentListRight.appendChild(commentListTitleDate);
-    commentListRight.appendChild(commentListTextProvided);
+    commentListElRight.appendChild(commentListElTitleDate);
+    commentListElRight.appendChild(commentListElTextProvided);
 
     // Add class names for all five div elements
 
-    commentListContainer.classList.add('comment-list__container');
-    commentListLeft.classList.add('comment-list__left');
-    commentListRight.classList.add('comment-list__right');
-    commentListTitleDate.classList.add('comment-list__title-and-date');
-    commentListTextProvided.classList.add('comment-list__textProvided');
+    commentListElContainer.classList.add('comment-list__container');
+    commentListElLeft.classList.add('comment-list__left');
+    commentListElRight.classList.add('comment-list__right');
+    commentListElTitleDate.classList.add('comment-list__title-and-date');
+    commentListElTextProvided.classList.add('comment-list__textProvided');
 
     let commentNameEl = document.createElement('p');
     let commentDateEl = document.createElement('p');
@@ -81,24 +86,35 @@ function displayComment() {
     commentDateEl.classList.add('comment-list__date');
     commentTextEl.classList.add('comment-list__text');
 
-    commentListTitleDate.appendChild(commentNameEl);
-    commentListTitleDate.appendChild(commentDateEl);
-    commentListTextProvided.appendChild(commentTextEl);
+    commentListElTitleDate.appendChild(commentNameEl);
+    commentListElTitleDate.appendChild(commentDateEl);
+    commentListElTextProvided.appendChild(commentTextEl);
   }
 }
 
 const submitHandler = (event) => {
   event.preventDefault();
 
-  commentList.innerHTML = '';
+  commentListEl.innerHTML = '';
+
+  let timestampVal = event.timeStamp;
+  let dateVal = new Date(timestampVal);
+  let formatteddateVal = `${String(dateVal.getDate()).padStart(
+    2,
+    '0'
+  )}/${String(dateVal.getMonth() + 1).padStart(
+    2,
+    '0'
+  )}/${dateVal.getFullYear()}`;
 
   let newComment = {
     name: event.target.name.value,
-    date: event.timeStamp,
+    date: formatteddateVal,
     comment: event.target.comment.value,
   };
 
   commentsList.unshift(newComment);
+  console.log(commentsList);
 
   displayComment();
 };
