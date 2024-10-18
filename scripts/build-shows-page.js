@@ -52,21 +52,42 @@ function displayShows() {
   showsListEl.innerHTML = '';
 
   for (let i = 0; i < showsList.length; i++) {
-    const dateEl = document.createElement('p');
-    const venueEl = document.createElement('p');
-    const locationEl = document.createElement('p');
+    const dateTitleEl = document.createElement('h3');
+    dateTitleEl.innerHTML = 'DATE';
 
+    const dateEl = document.createElement('p');
     dateEl.innerHTML = showsList[i].date;
+
+    const venueTitleEl = document.createElement('h3');
+    venueTitleEl.innerHTML = 'VENUE';
+
+    const venueEl = document.createElement('p');
     venueEl.innerHTML = showsList[i].venue;
+
+    const locationTitleEl = document.createElement('h3');
+    locationTitleEl.innerHTML = 'LOCATION';
+
+    const locationEl = document.createElement('p');
     locationEl.innerHTML = showsList[i].location;
 
+    dateTitleEl.classList.add('shows__title');
     dateEl.classList.add('shows__date');
+    venueTitleEl.classList.add('shows__title');
     venueEl.classList.add('shows__venue');
+    locationTitleEl.classList.add('shows__title');
     locationEl.classList.add('shows__location');
 
+    const buttonEl = document.createElement('div');
+    buttonEl.innerHTML = "<button class='shows__button'>BUY TICKETS</button>";
+    buttonEl.classList.add('shows__button-container');
+
+    showsListEl.appendChild(dateTitleEl);
     showsListEl.appendChild(dateEl);
+    showsListEl.appendChild(venueTitleEl);
     showsListEl.appendChild(venueEl);
+    showsListEl.appendChild(locationTitleEl);
     showsListEl.appendChild(locationEl);
+    showsListEl.appendChild(buttonEl);
   }
 }
 

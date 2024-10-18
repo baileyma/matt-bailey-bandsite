@@ -206,6 +206,41 @@
   }
 }
 
+.shows {
+  &__head-title {
+    width: 90%;
+    margin: auto;
+  }
+
+  &__list {
+    width: 90%;
+    margin: auto;
+  }
+
+  &__title {
+    color: $primary-color-silver;
+    font-family: 'NunitoSansBold';
+  }
+
+  &__date {
+    font-family: 'NunitoSansBold';
+  }
+
+  &__location {
+    font-family: 'NunitoSansRegular';
+  }
+
+  &__button {
+    margin-bottom: 1rem;
+    background-color: $primary-color-black;
+    color: $primary-color-white;
+  }
+
+  &__button-container {
+    border-bottom: 0.1rem solid $secondary-color-mercury;
+  }
+}
+
 .photo-gallery {
   background-color: $secondary-color-alabaster;
   padding: 0 1.6rem;

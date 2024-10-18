@@ -198,6 +198,14 @@
   &__image {
     width: 7vw;
     border-radius: 50%;
+
+    max-width: 3.6rem;
+    max-height: 3.6rem;
+
+    @include tablet-and-desktop {
+      max-width: 4.8rem;
+      max-height: 4.8rem;
+    }
   }
 
   // Form right and its children
@@ -210,11 +218,18 @@
 
   &__form {
     width: 100%;
+    min-height: 3.6rem;
+    padding: 1.2rem;
+
+    @include tablet-and-desktop {
+      min-height: 4.8rem;
+      padding: 1.6rem;
+    }
   }
 
   &__form-label {
     padding-top: 0.5rem;
-    padding-bottom: 0.5rem;
+    padding-bottom: 0.4rem;
     color: $primary-color-silver;
     width: 90%;
   }
@@ -232,16 +247,28 @@
     color: $primary-color-black;
     background-color: $secondary-color-alabaster;
     font-family: NunitoSansBold;
-    border: 0.1rem solid $primary-color-silver;
+    border: 0.1rem solid $secondary-color-mercury;
+    // Need secondary black for the error state...
   }
 
   &__form-button {
     background-color: $primary-color-black;
     color: $primary-color-white;
-    width: 60vw;
-    height: 5vh;
+    width: 100%;
+    height: 4rem;
     border-radius: 0.4rem;
     width: 90%;
+
+    // not working
+    :hover {
+      background-color: $secondary-color-black;
+    }
+
+    @include tablet-and-desktop {
+      min-width: 15rem;
+      padding-left: 3.2rem;
+      padding-right: 3.2rem;
+    }
   }
 }
 
@@ -249,8 +276,8 @@
   &__container {
     display: flex;
     flex-direction: row;
-    border-bottom: 0.1rem solid $primary-color-silver;
-    border-top: 0.1rem solid $primary-color-silver;
+    border-bottom: 0.1rem solid $secondary-color-mercury;
+    border-top: 0.1rem solid $secondary-color-mercury;
     width: 90%;
     margin: auto;
   }
@@ -266,6 +293,8 @@
     width: 10vw;
     height: 10vh;
     border-radius: 50%;
+
+    // should i be setting this in some way responding to empty i.mage elements?
     background-color: $secondary-color-mercury;
     margin-right: 1.5rem;
   }
