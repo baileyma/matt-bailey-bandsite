@@ -210,6 +210,25 @@
   &__head-title {
     width: 90%;
     margin: auto;
+    padding: 2.4rem 0rem 1.6rem 0rem;
+    line-height: 3.2rem;
+    font-size: 2.4rem;
+    font-family: 'NunitoSansBold';
+
+    @include tablet-and-desktop {
+      font-size: 3.6rem;
+      line-height: 4.4rem;
+    }
+  }
+
+  &__optional-titles {
+    display: none;
+
+    @include tablet-and-desktop {
+      display: flex;
+      width: 60%;
+      justify-content: space-around;
+    }
   }
 
   &__list {
@@ -217,27 +236,59 @@
     margin: auto;
   }
 
+  &__item-wrapper {
+    @include tablet-and-desktop {
+      display: flex;
+      justify-content: space-between;
+    }
+  }
+
   &__title {
     color: $primary-color-silver;
     font-family: 'NunitoSansBold';
+    margin-bottom: 0rem;
+    font-size: 1.3rem;
+    line-height: 1.8rem;
+
+    @include tablet-and-desktop {
+      display: none;
+    }
   }
 
   &__date {
     font-family: 'NunitoSansBold';
+    font-size: 1.3rem;
+    line-height: 1.8rem;
+  }
+
+  &__venue {
+    font-family: 'NunitoSansRegular';
+    font-size: 1.3rem;
+    line-height: 1.8rem;
+    text-align: justify;
   }
 
   &__location {
     font-family: 'NunitoSansRegular';
+    font-size: 1.3rem;
+    line-height: 1.8rem;
+  }
+
+  &__button-container {
+    border-bottom: 0.1rem solid $secondary-color-mercury;
+    width: 100%;
+    @include tablet-and-desktop {
+      width: 20vw;
+    }
   }
 
   &__button {
     margin-bottom: 1rem;
     background-color: $primary-color-black;
     color: $primary-color-white;
-  }
-
-  &__button-container {
-    border-bottom: 0.1rem solid $secondary-color-mercury;
+    width: 90%;
+    min-height: 6vh;
+    border-radius: 0.4rem;
   }
 }
 
