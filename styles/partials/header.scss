@@ -52,8 +52,11 @@
     }
   }
 
-  &__nav-item--active {
-    border-bottom: 0.5rem solid $primary-color-white;
+  &__nav-link {
+    text-decoration: none;
+    color: $primary-color-white;
+    display: flex;
+    justify-content: center;
   }
 
   &__nav-item {
@@ -67,6 +70,7 @@
     width: 100%;
     margin: 0;
     padding: 1rem 0 0.5rem 0;
+    color: $secondary-color-mercury;
 
     @include tablet-and-desktop {
       width: 30%;
@@ -75,10 +79,8 @@
     }
   }
 
-  &__nav-link {
-    text-decoration: none;
+  &__nav-item--active {
+    border-bottom: 0.5rem solid $primary-color-white;
     color: $primary-color-white;
-    display: flex;
-    justify-content: center;
   }
 }

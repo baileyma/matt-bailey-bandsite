@@ -1,12 +1,7 @@
 @use './partials/variables.scss' as *;
-@use './partials/fonts.scss' as *;
-@use './partials/resets.scss' as *;
+@use './partials/fonts.scss';
+@use './partials/resets.scss';
 @use './partials/mixins.scss' as *;
-
-// The hero page background height/width needs looking at
-// Hero page title's font characteristics don't respond to my css
-// Make line heights consistent
-// max width for desktop
 
 .hero-page {
   width: 100%;
@@ -52,6 +47,7 @@
 .about-section {
   padding: 0 1.6rem;
   background-color: $primary-color-white;
+  color: $primary-color-black;
 
   &__wrapper {
     max-width: 1280px;
@@ -85,6 +81,15 @@
     }
   }
 
+  &__paragraph-wrapper {
+    display: flex;
+    flex-direction: column;
+
+    @include tablet-and-desktop {
+      flex-direction: row;
+    }
+  }
+
   &__text {
     font-size: 1.3rem;
     line-height: 1.8rem;
@@ -99,7 +104,6 @@
     }
 
     &--emphasis {
-      // I increased the font size as I felt the style guide didn't match the mockup
       font-size: 2rem;
       line-height: 1.8rem;
       font-family: 'NunitoSansBold';
@@ -112,7 +116,6 @@
   }
 
   &__subheading {
-    // I increased the font-size and line-height as I felt the values provided by the style guide were too small versus the mockup
     font-size: 2rem;
     line-height: 3.2rem;
     font-family: 'NunitoSansBold';
@@ -129,6 +132,7 @@
 .photo-gallery {
   background-color: $secondary-color-alabaster;
   padding: 0 1.6rem;
+  color: $primary-color-black;
 
   @include tablet-and-desktop {
     padding: 0rem 3.6rem;
