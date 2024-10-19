@@ -7,6 +7,12 @@
   }
 }
 
+@mixin desktop-only {
+  @media screen and (min-width: $desktop-min-width) {
+    @content;
+  }
+}
+
 // Mobile text styles
 /*
 @mixin mobile__header {

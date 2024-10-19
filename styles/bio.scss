@@ -176,15 +176,24 @@
 
 .comments {
   color: $primary-color-silver;
+  max-width: 1280px;
+  margin: auto;
 
   &__title {
-    font-size: 6rem;
+    font-size: 2.4rem;
+    line-height: 3.2rem;
     color: $primary-color-black;
+    padding: 0 1.6rem;
   }
 
   &__container {
     display: flex;
     padding-bottom: 3rem;
+
+    @include tablet-and-desktop {
+      max-width: 50vw;
+      margin: auto;
+    }
   }
 
   // Form left and its children
@@ -193,10 +202,12 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    padding-top: 3vh;
   }
 
   &__image {
-    width: 7vw;
+    width: 10vw;
+    height: 7vh;
     border-radius: 50%;
 
     max-width: 3.6rem;
@@ -205,6 +216,7 @@
     @include tablet-and-desktop {
       max-width: 4.8rem;
       max-height: 4.8rem;
+      height: 12vh;
     }
   }
 
@@ -213,7 +225,6 @@
     width: 85vw;
     display: flex;
     flex-direction: column;
-    align-items: center;
   }
 
   &__form {
@@ -224,6 +235,9 @@
     @include tablet-and-desktop {
       min-height: 4.8rem;
       padding: 1.6rem;
+      display: flex;
+      flex-direction: column;
+      width: 90%;
     }
   }
 
@@ -238,6 +252,10 @@
     display: flex;
     flex-direction: column;
     width: 90%;
+
+    @include tablet-and-desktop {
+      width: 100%;
+    }
   }
 
   &__form-input {
@@ -268,6 +286,8 @@
       min-width: 15rem;
       padding-left: 3.2rem;
       padding-right: 3.2rem;
+      width: 30%;
+      align-self: flex-end;
     }
   }
 }
@@ -280,6 +300,12 @@
     border-top: 0.1rem solid $secondary-color-mercury;
     width: 90%;
     margin: auto;
+    padding: 0rem 3rem;
+
+    @include tablet-and-desktop {
+      max-width: 50vw;
+      padding-bottom: 1vh;
+    }
   }
 
   &__left {
@@ -290,13 +316,17 @@
   }
 
   &__image {
-    width: 10vw;
-    height: 10vh;
+    width: 7vw;
+    height: 5vh;
     border-radius: 50%;
 
     // should i be setting this in some way responding to empty i.mage elements?
     background-color: $secondary-color-mercury;
     margin-right: 1.5rem;
+
+    @include tablet-and-desktop {
+      height: 12vh;
+    }
   }
 
   &__right {
