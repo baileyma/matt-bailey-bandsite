@@ -1,14 +1,14 @@
-@use './variables.scss' as *;
-@use './fonts.scss' as *;
-@use './resets.scss' as *;
-@use './mixins.scss' as *;
+@use './variables' as *;
+@use './fonts' as *;
+@use './resets' as *;
+@use './mixins' as *;
 
 .footer {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  color: $primary-color-white;
-  background-color: $primary-color-black;
+  color: $primary-color-3;
+  background-color: $primary-color-1;
   padding: 0 1.6rem;
 
   @include tablet-and-desktop {
@@ -37,18 +37,18 @@
   &__title {
     font-size: 2.4rem;
     line-height: 3.2rem;
-    font-family: NunitoSansBold;
+    font-weight: 700;
 
     @include tablet-and-desktop {
       font-size: 3.6rem;
-      font-weight: 700;
+
       line-height: 4.4rem;
       width: 63%;
     }
   }
 
   &__icons {
-    width: 25%;
+    width: 13rem;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -68,7 +68,6 @@
   &__sub-title {
     font-size: 1.4rem;
     line-height: 2.2rem;
-    font-family: NunitoSansBold;
     font-weight: 600;
 
     @include tablet-and-desktop {
@@ -81,12 +80,11 @@
   &__text {
     font-size: 1.3rem;
     line-height: 1.8rem;
-    font-family: 'NunitoSansRegular';
+    font-weight: 400;
 
     @include tablet-and-desktop {
       font-size: 1.4rem;
       line-height: 2rem;
-      font-weight: 400;
     }
   }
 

@@ -27,26 +27,14 @@ const commentsList = [
   },
 ];
 
-// Create a variable for the comment-list div
-
 let commentListEl = document.querySelector('.comment-list');
-
-// Make the comments form div a variable
-
-// fn that takes event object's name, title, and comment
-// and puts it at the top of the commentsList
-
-// This puts commentsList into p tags within div
-// creates p element, gives innerhtml from commentsList, adds class, then appends to div
 
 function displayComment() {
   for (let i = 0; i < commentsList.length; i++) {
-    // Setup container and append to the section
     let commentListElContainer = document.createElement('div');
 
     commentListEl.appendChild(commentListElContainer);
 
-    // Setup left and right parts, add the img to left part, then append them to the container
     let commentListElLeft = document.createElement('div');
     let commentListElRight = document.createElement('div');
 
@@ -58,15 +46,11 @@ function displayComment() {
     commentListElContainer.appendChild(commentListElLeft);
     commentListElContainer.appendChild(commentListElRight);
 
-    // Setup title&date and text and append them to the right part
-
     let commentListElTitleDate = document.createElement('div');
     let commentListElTextProvided = document.createElement('div');
 
     commentListElRight.appendChild(commentListElTitleDate);
     commentListElRight.appendChild(commentListElTextProvided);
-
-    // Add class names for all five div elements
 
     commentListElContainer.classList.add('comment-list__container');
     commentListElLeft.classList.add('comment-list__left');
@@ -118,8 +102,6 @@ const submitHandler = (event) => {
 
   displayComment();
 };
-
-// This grabs the form div, and then chucks its info into the top of the commentsList
 
 let form = document.querySelector('.comments__form');
 form.addEventListener('submit', (element) => submitHandler(element));

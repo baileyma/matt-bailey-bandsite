@@ -1,14 +1,14 @@
-@use './partials/variables.scss' as *;
-@use './partials/fonts.scss';
-@use './partials/resets.scss';
-@use './partials/mixins.scss' as *;
+@use './partials/variables' as *;
+@use './partials/fonts';
+@use './partials/resets';
+@use './partials/mixins' as *;
 
 .hero-page {
   width: 100%;
   background-image: url('../assets/images/hero-bio.jpg');
   background-repeat: no-repeat;
   background-size: cover;
-  background-color: rgba($color: $primary-color-black, $alpha: 0.5);
+  background-color: rgba($color: $primary-color-1, $alpha: 0.5);
   background-blend-mode: overlay;
   height: 30vh;
 
@@ -32,22 +32,23 @@
   &__title {
     font-size: 2.4rem;
     height: 3.2rem;
-    font-family: NunitoSansBold;
-    color: $primary-color-white;
+    font-weight: 700;
+    color: $primary-color-3;
     padding: 0 1.6rem;
 
     @include tablet-and-desktop {
       font-size: 6rem;
       font-weight: 700;
       line-height: 6.8rem;
+      padding-left: 5rem;
     }
   }
 }
 
 .about-section {
   padding: 0 1.6rem;
-  background-color: $primary-color-white;
-  color: $primary-color-black;
+  background-color: $primary-color-3;
+  color: $primary-color-1;
 
   &__wrapper {
     max-width: 1280px;
@@ -57,18 +58,18 @@
   &__title {
     font-size: 2.4rem;
     line-height: 3.2rem;
-    font-family: NunitoSansBold;
+    font-weight: 700;
 
     @include tablet-and-desktop {
       font-size: 3.6rem;
-      font-weight: 700;
+
       line-height: 4.4rem;
       padding-left: 4.8rem;
     }
   }
   &__text-wrapper {
     @include tablet-and-desktop {
-      width: 70%;
+      width: 85%;
       padding-left: 9.6rem;
     }
   }
@@ -84,6 +85,7 @@
   &__paragraph-wrapper {
     display: flex;
     flex-direction: column;
+    width: 100%;
 
     @include tablet-and-desktop {
       flex-direction: row;
@@ -93,7 +95,7 @@
   &__text {
     font-size: 1.3rem;
     line-height: 1.8rem;
-    font-family: 'NunitoSansRegular';
+    font-weight: 400;
 
     @include tablet-and-desktop {
       width: 45%;
@@ -106,7 +108,6 @@
     &--emphasis {
       font-size: 2rem;
       line-height: 1.8rem;
-      font-family: 'NunitoSansBold';
       font-weight: 700;
 
       @include tablet-and-desktop {
@@ -118,21 +119,22 @@
   &__subheading {
     font-size: 2rem;
     line-height: 3.2rem;
-    font-family: 'NunitoSansBold';
     font-weight: 600;
+    margin-bottom: 0;
 
     @include tablet-and-desktop {
       font-size: 2.4rem;
       line-height: 3.2rem;
       font-weight: 500;
+      width: 90%;
     }
   }
 }
 
 .photo-gallery {
-  background-color: $secondary-color-alabaster;
+  background-color: $secondary-color-3;
   padding: 0 1.6rem;
-  color: $primary-color-black;
+  color: $primary-color-1;
 
   @include tablet-and-desktop {
     padding: 0rem 3.6rem;
@@ -149,7 +151,7 @@
   &__title {
     font-size: 2.4rem;
     height: 3.2rem;
-    font-family: 'NunitoSansBold';
+    font-weight: 700;
 
     @include tablet-and-desktop {
       font-size: 3.6rem;
@@ -179,15 +181,20 @@
 }
 
 .comments {
-  color: $primary-color-silver;
+  color: $primary-color-2;
   max-width: 1280px;
   margin: auto;
 
   &__title {
     font-size: 2.4rem;
     line-height: 3.2rem;
-    color: $primary-color-black;
+    color: $primary-color-1;
     padding: 0 1.6rem;
+
+    @include tablet-and-desktop {
+      padding-left: 4rem;
+      font-size: 3.2rem;
+    }
   }
 
   &__container {
@@ -195,14 +202,17 @@
     padding-bottom: 3rem;
 
     @include tablet-and-desktop {
-      max-width: 50vw;
+      width: 90%;
       margin: auto;
+    }
+
+    @include desktop-only {
+      width: 50%;
     }
   }
 
-  // Form left and its children
   &__form-left {
-    width: 15vw;
+    width: 22vw;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -211,7 +221,7 @@
 
   &__image {
     width: 10vw;
-    height: 7vh;
+    height: 6vh;
     border-radius: 50%;
 
     max-width: 3.6rem;
@@ -224,7 +234,6 @@
     }
   }
 
-  // Form right and its children
   &__form-right {
     width: 85vw;
     display: flex;
@@ -248,7 +257,7 @@
   &__form-label {
     padding-top: 0.5rem;
     padding-bottom: 0.4rem;
-    color: $primary-color-silver;
+    color: $primary-color-2;
     width: 90%;
   }
 
@@ -266,24 +275,26 @@
     border-radius: 0.4rem;
     margin-bottom: 1rem;
     padding: 0.5rem;
-    color: $primary-color-black;
-    background-color: $secondary-color-alabaster;
-    font-family: NunitoSansBold;
-    border: 0.1rem solid $secondary-color-mercury;
-    // Need secondary black for the error state...
+    color: $primary-color-1;
+    background-color: $secondary-color-3;
+    font-weight: 700;
+    border: 0.1rem solid $secondary-color-2;
+  }
+
+  &__form-input--text-area {
+    height: 9vh;
   }
 
   &__form-button {
-    background-color: $primary-color-black;
-    color: $primary-color-white;
+    background-color: $primary-color-1;
+    color: $primary-color-3;
     width: 100%;
     height: 4rem;
     border-radius: 0.4rem;
     width: 90%;
 
-    // not working
     :hover {
-      background-color: $secondary-color-black;
+      background-color: $secondary-color-1;
     }
 
     @include tablet-and-desktop {
@@ -300,15 +311,20 @@
   &__container {
     display: flex;
     flex-direction: row;
-    border-bottom: 0.1rem solid $secondary-color-mercury;
-    border-top: 0.1rem solid $secondary-color-mercury;
+    border-bottom: 0.1rem solid $secondary-color-2;
+    border-top: 0.1rem solid $secondary-color-2;
     width: 90%;
     margin: auto;
     padding: 0rem 3rem;
 
     @include tablet-and-desktop {
-      max-width: 50vw;
+      width: 70%;
+      padding-left: 10rem;
       padding-bottom: 1vh;
+    }
+
+    @include desktop-only {
+      width: 30%;
     }
   }
 
@@ -317,19 +333,23 @@
     flex-direction: column;
     width: 20vw;
     padding-top: 2rem;
+
+    @include tablet-and-desktop {
+      width: 8vw;
+    }
   }
 
   &__image {
-    width: 7vw;
-    height: 5vh;
+    width: 10vw;
+    height: 6vh;
     border-radius: 50%;
 
-    // should i be setting this in some way responding to empty i.mage elements?
-    background-color: $secondary-color-mercury;
+    background-color: $secondary-color-2;
     margin-right: 1.5rem;
 
     @include tablet-and-desktop {
-      height: 12vh;
+      height: 6rem;
+      width: 6rem;
     }
   }
 
@@ -347,12 +367,9 @@
   }
 
   &__textProvided {
-    color: $primary-color-black;
+    color: $primary-color-1;
   }
 
-  // Created in JS
-
-  // Appended to __title-and-date
   &__name {
     font-size: 2rem;
     margin-bottom: 0rem;
@@ -362,7 +379,6 @@
     margin-bottom: 0rem;
   }
 
-  // Appended to __textProvided
   &__text {
   }
 }

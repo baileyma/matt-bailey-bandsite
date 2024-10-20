@@ -1,11 +1,12 @@
-@use './fonts.scss' as *;
+@use './fonts' as *;
 
 html {
   font-size: 10px;
+  font-family: 'NunitoSans', Arial, sans-serif;
 }
 
 body {
-  font-family: 'NunitoSansRegular', Arial, sans-serif;
+  font-family: 'NunitoSans', Arial, sans-serif;
   margin: 0;
 }
 
