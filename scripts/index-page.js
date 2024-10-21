@@ -1,6 +1,6 @@
-const commentsList = [
+let commentsList = [
   {
-    name: 'Victor Pinto',
+    name: 'Victor Pintodddddddddddddddddddddd',
 
     comment:
       'This is art. This is inexplicable magic expressed in the purest way, everything that makes up this majestic work deserves reverence. Let us appreciate this for what it is and what it contains.',
@@ -26,6 +26,40 @@ const commentsList = [
     date: '10/20/2023',
   },
 ];
+
+// seperate js files
+
+const API_KEY = 'c4116707-d196-43e4-9344-a05ce7449b8e';
+
+const attachAPI_KEY = `?api_key=${API_KEY}`;
+
+const bandsiteApi = new BandSiteApi(API_KEY);
+
+const responseItem = async () => {
+  const response = await bandsiteApi.getComments();
+  console.log(response.data);
+
+  return response.data;
+};
+
+// const comments2List = responseItem();
+
+// comments2List.forEach((ele) => {
+//   const eleObj = {
+//     name: ele.name,
+//     comment: ele.comment,
+//     date: ele.date,
+//   };
+//   commentsList.push(eleObj);
+// });
+// console.log('here1');
+
+// console.log(commentsList);
+// console.log('here');
+
+// console.log(bandsiteApi.postComment());
+
+// console.log(bandsiteApi.getShows());
 
 let commentListEl = document.querySelector('.comment-list');
 
