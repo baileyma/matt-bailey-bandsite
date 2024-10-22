@@ -1,76 +1,83 @@
-const showsList = [
-  {
-    date: 'Mon Sept 09 2024',
+// const showsList = [
+//   {
+//     date: 'Mon Sept 09 2024',
 
-    venue: 'Ronald Lane',
+//     venue: 'Ronald Lane',
 
-    location: 'San Francisco, CA',
-  },
+//     location: 'San Francisco, CA',
+//   },
 
-  {
-    date: 'Tue Sept 17 2024',
+//   {
+//     date: 'Tue Sept 17 2024',
 
-    venue: 'Pier 3 East',
+//     venue: 'Pier 3 East',
 
-    location: 'San Francisco, CA',
-  },
+//     location: 'San Francisco, CA',
+//   },
 
-  {
-    date: 'Sat Oct 12 2024',
+//   {
+//     date: 'Sat Oct 12 2024',
 
-    venue: 'View Lounge',
+//     venue: 'View Lounge',
 
-    location: 'San Francisco, CA',
-  },
+//     location: 'San Francisco, CA',
+//   },
 
-  {
-    date: 'Sat Nov 16 2024',
+//   {
+//     date: 'Sat Nov 16 2024',
 
-    venue: 'Hyatt Agency',
+//     venue: 'Hyatt Agency',
 
-    location: 'San Francisco, CA',
-  },
-  {
-    date: 'Fri Nov 29 2024',
+//     location: 'San Francisco, CA',
+//   },
+//   {
+//     date: 'Fri Nov 29 2024',
 
-    venue: 'Moscow Center',
+//     venue: 'Moscow Center',
 
-    location: 'San Francisco, CA',
-  },
-  {
-    date: 'Wed Dec 18 2024',
+//     location: 'San Francisco, CA',
+//   },
+//   {
+//     date: 'Wed Dec 18 2024',
 
-    venue: 'Press Club',
+//     venue: 'Press Club',
 
-    location: 'San Francisco, CA',
-  },
-];
+//     location: 'San Francisco, CA',
+//   },
+// ];
 
 const showsListEl = document.querySelector('.shows__list');
 
-function displayShows() {
+const responseShows = async () => {
+  const response = await bandsiteApi.getShows();
+  console.log(response);
+
+  displayShows(response.data);
+};
+
+function displayShows(shows) {
   showsListEl.innerHTML = '';
 
-  for (let i = 0; i < showsList.length; i++) {
+  shows.forEach((ele) => {
     const itemWrapperEl = document.createElement('div');
 
     const dateTitleEl = document.createElement('h3');
     dateTitleEl.innerHTML = 'DATE';
 
     const dateEl = document.createElement('p');
-    dateEl.innerHTML = showsList[i].date;
+    dateEl.innerHTML = ele.date;
 
     const venueTitleEl = document.createElement('h3');
     venueTitleEl.innerHTML = 'VENUE';
 
     const venueEl = document.createElement('p');
-    venueEl.innerHTML = showsList[i].venue;
+    venueEl.innerHTML = ele.venue;
 
     const locationTitleEl = document.createElement('h3');
     locationTitleEl.innerHTML = 'LOCATION';
 
     const locationEl = document.createElement('p');
-    locationEl.innerHTML = showsList[i].location;
+    locationEl.innerHTML = ele.location;
 
     itemWrapperEl.classList.add('shows__item-wrapper');
 
@@ -93,7 +100,7 @@ function displayShows() {
     itemWrapperEl.appendChild(locationEl);
     itemWrapperEl.appendChild(buttonEl);
     showsListEl.appendChild(itemWrapperEl);
-  }
+  });
 }
 
-displayShows();
+responseShows();

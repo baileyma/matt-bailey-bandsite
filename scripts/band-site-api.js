@@ -12,7 +12,7 @@ class BandSiteApi {
       `${this.baseUrl}/comments?api_key=${this.apiKey}`
     );
     return response;
-    // need to sort!
+    // need to sort them in order!
   }
 
   async getShows() {
