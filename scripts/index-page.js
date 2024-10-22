@@ -8,7 +8,14 @@ let commentListEl = document.querySelector('.comment-list');
 
 const responseItem = async () => {
   const response = await bandsiteApi.getComments();
-  renderComments(response.data);
+
+  const responseData = response.data;
+
+  const sortedResponseData = responseData.sort((a, b) => {
+    return b.timestamp - a.timestamp;
+  });
+
+  renderComments(sortedResponseData);
 };
 
 const renderComments = (comments) => {
@@ -45,7 +52,11 @@ const renderComments = (comments) => {
     let commentTextEl = document.createElement('p');
 
     commentNameEl.innerHTML = ele.name;
-    commentDateEl.innerHTML = ele.timestamp;
+    commentDateEl.innerHTML = new Date(ele.timestamp).toLocaleString('en-GB', {
+      year: 'numeric',
+      month: '2-digit',
+      day: '2-digit',
+    });
     commentTextEl.innerHTML = ele.comment;
 
     commentNameEl.classList.add('comment-list__name');
@@ -60,17 +71,6 @@ const renderComments = (comments) => {
 
 responseItem();
 
-// console.log(commentsList);
-
-// console.log(bandsiteApi.postComment());
-
-// console.log(bandsiteApi.getShows());
-
-// function displayComment() {
-//   for (let i = 0; i < commentsList.length; i++) {
-
-// }
-
 const submitHandler = async (event) => {
   event.preventDefault();
 
@@ -78,21 +78,10 @@ const submitHandler = async (event) => {
 
   let newComment = {
     name: event.target.name.value,
-    date: event.timestamp,
     comment: event.target.comment.value,
   };
 
   await bandsiteApi.postComment(newComment);
-
-  // let timestampVal = event.timeStamp;
-  // let dateVal = new Date(timestampVal);
-  // let formatteddateVal = `${String(dateVal.getDate()).padStart(
-  //   2,
-  //   '0'
-  // )}/${String(dateVal.getMonth() + 1).padStart(
-  //   2,
-  //   '0'
-  // )}/${dateVal.getFullYear()}`;
 
   responseItem();
 };

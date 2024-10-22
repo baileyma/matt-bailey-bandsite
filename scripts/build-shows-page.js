@@ -48,6 +48,12 @@
 
 const showsListEl = document.querySelector('.shows__list');
 
+const API_KEY = 'c4116707-d196-43e4-9344-a05ce7449b8e';
+
+const attachAPI_KEY = `?api_key=${API_KEY}`;
+
+const bandsiteApi = new BandSiteApi(API_KEY);
+
 const responseShows = async () => {
   const response = await bandsiteApi.getShows();
   console.log(response);
@@ -65,13 +71,18 @@ function displayShows(shows) {
     dateTitleEl.innerHTML = 'DATE';
 
     const dateEl = document.createElement('p');
-    dateEl.innerHTML = ele.date;
+
+    dateEl.innerHTML = new Date(ele.date).toLocaleString('en-GB', {
+      year: 'numeric',
+      month: '2-digit',
+      day: '2-digit',
+    });
 
     const venueTitleEl = document.createElement('h3');
     venueTitleEl.innerHTML = 'VENUE';
 
     const venueEl = document.createElement('p');
-    venueEl.innerHTML = ele.venue;
+    venueEl.innerHTML = ele.place;
 
     const locationTitleEl = document.createElement('h3');
     locationTitleEl.innerHTML = 'LOCATION';
