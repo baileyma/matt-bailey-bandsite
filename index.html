@@ -5,8 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Bandsite | Homepage</title>
     <link rel="stylesheet" href="./styles/bio.css" />
-    <link rel="stylesheet" href="./styles/partials/header.css" />
-    <link rel="stylesheet" href="./styles/partials/footer.css" />
+    <link rel="stylesheet" href="./styles/partials/global.css" />
     <script src="https://unpkg.com/axios/dist/axios.min.js" defer></script>
     <script src="./scripts/band-site-api.js" defer></script>
     <script src="./scripts/index-page.js" defer></script>
@@ -25,7 +24,11 @@
             <a class="header__nav-link" href="./index.html">Biography</a>
           </li>
           <li class="header__nav-item">
-            <a class="header__nav-link" href="./pages/shows.html">Shows</a>
+            <a
+              class="header__nav-link header__nav-item--inactive"
+              href="./pages/shows.html"
+              >Shows</a
+            >
           </li>
         </ul>
       </nav>

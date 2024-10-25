@@ -3,6 +3,94 @@
 @use './resets' as *;
 @use './mixins' as *;
 
+.header {
+  background-color: $primary-color-1;
+  color: $primary-color-3;
+
+  &__wrapper {
+    display: flex;
+    flex-direction: column;
+    max-width: 1280px;
+    margin: auto;
+    padding-top: 1rem;
+    justify-content: center;
+
+    @include tablet-and-desktop {
+      flex-direction: row;
+      justify-content: flex-start;
+      align-items: center;
+
+      padding: 1rem 3.6rem 0 3.6rem;
+    }
+  }
+
+  &__title {
+    align-self: center;
+    font-size: 2.4rem;
+    height: 2.2rem;
+    font-weight: 700;
+    max-width: 12rem;
+    max-height: 2rem;
+    padding-bottom: 2rem;
+
+    @include tablet-and-desktop {
+      padding-bottom: 0;
+    }
+  }
+
+  &__nav-bar {
+    display: flex;
+    justify-content: space-around;
+    background-color: $primary-color-1;
+
+    @include tablet-and-desktop {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-evenly;
+      align-content: flex-end;
+      width: 30%;
+      height: 100%;
+    }
+  }
+
+  &__nav-link {
+    text-decoration: none;
+    color: $primary-color-3;
+    display: flex;
+    justify-content: center;
+  }
+
+  &__nav-item {
+    font-size: 1.4rem;
+    height: 2.2rem;
+    font-weight: 600;
+    height: 100%;
+    min-height: 5vh;
+    text-align: center;
+    width: 100%;
+    margin: 0;
+    padding: 1rem 0 0.5rem 0;
+    color: $secondary-color-2;
+
+    @include tablet-and-desktop {
+      width: 30%;
+      height: 100%;
+      padding-top: 5rem;
+    }
+  }
+
+  &__nav-item--active {
+    border-bottom: 0.5rem solid $primary-color-3;
+    color: $primary-color-3;
+  }
+
+  &__nav-item--inactive {
+    color: $secondary-color-2;
+  }
+}
+
+// Footer styling
+
 .footer {
   display: flex;
   flex-direction: column;

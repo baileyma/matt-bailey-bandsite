@@ -87,4 +87,7 @@ const submitHandler = async (event) => {
 };
 
 let form = document.querySelector('.comments__form');
-form.addEventListener('submit', (element) => submitHandler(element));
+form.addEventListener('submit', (element) => {
+  submitHandler(element);
+  form.reset();
+});

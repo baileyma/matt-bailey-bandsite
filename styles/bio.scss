@@ -279,6 +279,11 @@
     background-color: $secondary-color-3;
     font-weight: 700;
     border: 0.1rem solid $secondary-color-2;
+
+    &::placeholder {
+      color: $primary-color-1;
+      font-weight: 400;
+    }
   }
 
   &__form-input--text-area {

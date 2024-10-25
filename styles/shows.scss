@@ -237,6 +237,10 @@
   }
 
   &__item-wrapper {
+    &:hover {
+      background-color: $secondary-color-3;
+    }
+
     @include tablet-and-desktop {
       display: flex;
       justify-content: space-between;
@@ -246,6 +250,10 @@
       border-bottom: 0.1rem solid $secondary-color-2;
       padding: 1rem;
     }
+  }
+
+  &__item-wrapper--active {
+    background-color: $secondary-color-2;
   }
 
   &__title {
