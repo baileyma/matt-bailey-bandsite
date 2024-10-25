@@ -63,16 +63,11 @@ function displayShows(shows) {
     itemWrapperEl.appendChild(locationEl);
     itemWrapperEl.appendChild(buttonEl);
     showsListEl.appendChild(itemWrapperEl);
+
+    itemWrapperEl.addEventListener('click', () => {
+      itemWrapperEl.classList.add('shows__item-wrapper--active');
+    });
   });
 }
 
 responseShows();
-
-const itemWrapper = document.querySelectorAll('.shows__item-wrapper');
-
-itemWrapper.forEach((ele) => {
-  ele.addEventListener('click', () => {
-    ele.classList.add('shows__item-wrapper--active');
-    console.log(ele.classList);
-  });
-});
